@@ -1,0 +1,117 @@
+body{
+    background-color: black;
+}
+
+.userInput{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.userForm{
+    border: 5px solid white  ;
+    padding: 30px 20px 50px 20px;
+    min-width: 555px;
+    
+}
+
+.userIcon
+{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.userName{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    height: 100px;
+    width:100px;
+    cursor: pointer;
+}
+
+.icon>img{
+    height: 60px;
+    width: 60px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+
+}
+.verifiedPicContainer{
+    display: flex;
+    height: 230px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 5px solid white;
+    font-size: 18pt;
+    margin-bottom: 30px;
+
+}
+
+
+.verifiedPic{
+    height: 200px;
+    align-self: center;
+}
+.verifiedUseroptionscontainer{
+    /* margin-top: 30px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.verifiedUseroptionscontainer button,
+.userName button,
+.formButtons button{
+    background-color: #FFFDFA;
+    color: black;
+    border-radius: 5px;
+    min-height:30px; 
+    min-width: 120px;
+}
+.errmsg{
+    margin-top: 10px;
+}
+.delUser{
+    display: flex;
+    flex-direction: column;
+}
+.userOptions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.formButtons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+}
+
+.avatar_btn input:checked + img {
+    outline: 2px solid white; /* blue border when selected */
+    border-radius: 8px;
+  }
+  
+
+.showPass{
+    display: flex;
+    flex-direction: row;
+}

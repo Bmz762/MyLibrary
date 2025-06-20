@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Library</title>
+  <link rel="stylesheet" href="styles/index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+
+<body>
+  <div class="main container-fluid">
+    <div class="PageTitle">
+        <h1> The Library</h1>
+      </div>
+
+
+      <div class="UserDropdown">
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" enable-caret="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+            </svg>
+          </button>
+          <ul class="dropdown-menu">
+            <%users.forEach(user => { %>
+              <form action="/user" method="POST">
+                <li class="userAv">
+                  <div class="userAvPP">
+                    <img src="<%= user.profilePic %>" alt="User Picture" />
+                  </div>
+                  <input type="hidden" name="user" value="<%= user.id %>" />
+                  <input type="submit" value="<%=user.userName %>" />
+                </li>
+              </form>
+            <% }) %>
+            <li>
+              <div class="tab-container">
+                <form class="NewUserin" action="/user" method="post">
+                  <label for="tab">Add User</label>
+                  <input type="submit" name="add" value="new" id="tab">
+                  <label for="tab1">User Settings</label><input type="submit" name="add" value="settings" id="tab1">
+                </form>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="cat">
+        <h1>Catalogue</h1>
+      </div>
+      <div class="Catalogueslid-container">
+        <button type="button" data-role="none" class="catalogue-prev slick-arrow" aria-label="Previous" role="button" style="display: block;"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+        </svg></button>
+        <div class="Catalogueslid">
+          <div class="cat-carousel slick-Track">
+              <!-- Loop through the books and render each item -->
+          </div>
+        </div>
+        <button type="button" data-role="none" class="catalogue-next slick-arrow" aria-label="Next" role="button" style="display: block;"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+        </svg></button>
+      </div>
+      <div class="userLibrary">
+        <h1 class="LibraryTitle">
+          My Library
+        </h1>
+        <div class="item brown"></div>
+        <!-- <div class="item brown1"></div> -->
+        <div class="item brown2"></div> 
+        <div class="item brown3"></div>
+        <div class="item brown4"></div> 
+        <div class="UserBooksPosition">
+          <% //if (addedbooks && addedbooks.length > 0) { %>
+            <button type="button" data-role="none" class="userbooks-prev slick-arrow" aria-label="Previous" role="button" style="display: block;"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+            </svg></button>
+          <div class="UserBooks">
+              <div class="Userbooks-carousel">
+              </div>
+            </div>
+            <button type="button" data-role="none" class="userbooks-next slick-arrow" aria-label="Next" role="button" style="display: block;"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z"/>
+            </svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>const initialUserBooks = <%- JSON.stringify(addedbooks) %>;</script>
+    <script type="module" src="scripts/carousel.js"></script>
+
+</body>
+</html>

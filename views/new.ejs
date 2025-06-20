@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/new.css">
+  <title>Add User</title>
+</head>
+
+<!-- C:\Users\Juan Trujillo\Desktop\web dev projects\s34 capstone project\public\images\sideway anubis.png -->
+<body>
+  <div class="userInput">
+    <div class="userForm">
+      <h1>Add User</h1>
+      <form action="/new" method="post">
+        <div class="userName">
+        <h3>Insert UserName</h3>
+        <input type="text" name="name" required>
+        <h3>Insert Password</h3>
+        <input type="password" id="password" class="password-field" name="password" required>
+        <div class="showPass">
+          <label for="togglePassword">Show Password</label>
+          <input type="checkbox" id="togglePassword" class="togglePassword" data-target="password">
+        </div>
+        <div class="errmsg">
+          <% if (locals.error) { %>
+            <%= error %>
+          <% } %>
+        </div>
+        <h1>Choose a User Icon</h1>
+        </div>
+        <div class="userIcon">
+          <button class="anubis icon" id="1" type="submit" name="userPic" value="images/anubis.png"> <img src="images/anubis.png" alt="anubi"></button>
+          <button class="horus icon" id="2" type="submit" name="userPic" value="images/horus.png"><img src="images/horus.png" alt="anubi"></button>
+          <button class="sideAnubis icon" id="3" type="submit" name="userPic" value="images/sidewayanubis.png"><img src="images/sidewayanubis.png" alt="anubi"></button>
+          <button class="sobek icon" id="4" type="submit" name="userPic" value="images/sobek.png"><img src="images/sobek.png" alt="anubi"></button>
+          <button class="thoth icon" id="5" type="submit" name="userPic" value="images/thoth.png"><img src="images/thoth.png" alt="anubi"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="/scripts/usersettings_script.js"></script>
+    
+</body>
+</html>

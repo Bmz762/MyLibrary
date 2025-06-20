@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/new.css">
+    <title>User Options</title>
+</head>
+
+<body>
+    <div class="userInput">
+        <div class="userForm">
+            <h1>User Settings</h1>
+            <div class="verifiedPicContainer">
+                <img class="verifiedPic" src="<%= user.profilePic %>" alt="User Picture" />
+                <div class="verifiedUsername">
+                    <%= user.userName %>
+                </div>
+            </div>
+            <div class="verifiedUseroptionscontainer">
+                <form action="/usersettings" method="post">
+                    <button type="submit" value="UserName" name="option">Change UserName</button>
+                    <button type="submit" value="Password" name="option">Change Password</button>
+                    <button type="submit" value="Avatar" name="option">Change Avatar</button>
+                    <button type = "submit" value="Delete" name="option"> Delete Account</button>
+                </form>
+                <form action="/back" method="post">
+                    <button type="submit" name="back" value="homePage">HomePage</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

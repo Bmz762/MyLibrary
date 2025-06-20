@@ -1,0 +1,325 @@
+/* *************************** */
+/* The screen size for my laptop is 1920 x 1080 */
+/* justify-content: center;   Main axis (horizontal)  */
+/* align-items: center;       Cross axis (vertical)  */
+/* *************************** */
+
+
+
+body{
+    background-color: black !important; 
+    overflow-x: hidden;     
+}
+
+
+.container-fluid{
+
+    height:100vh;
+    width: 100vw;
+    display:grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 12% 10% 20% 18% 40%;
+}
+
+
+.PageTitle{
+    grid-area:1/2/1/3;
+    justify-content: center;
+    place-items: center;
+    display: flex;
+    padding-top: 20px;
+    
+}
+
+.PageTitle>h1{
+    color: white;
+    font-size: 100px;
+}
+
+
+.UserDropdown{
+    grid-area: 1/3/1/4;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+.dropdown > button{
+    height: 80px;
+    width: 80px;
+    background-color: aliceblue;
+    border-color: brown;
+    border-radius: 50%;
+}
+
+.btn.dropdown-toggle::after{
+    display: none !important;
+}
+
+ul.dropdown-menu{
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;    
+}
+
+ul.dropdown-menu>li{
+    background-color: black;
+    padding:0px;
+    margin:0px;
+}
+
+
+#tab,#tab1 {
+    color: transparent; /* Hide the default text */
+    background-color: transparent; /* Optional: Make the input background transparent */
+    border: none; /* Optional: Remove border if not needed */
+  }
+  
+  #tab + label,
+  #tab1 + label {
+    cursor: pointer;
+    display: block;
+  }
+  
+  
+  .tab-container {
+    background-color: #f9f9f9;
+  }
+  
+li.userAv{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    height: 100%;
+    width:100%;
+    padding: 0px;
+    margin:0px;
+    align-self: center;
+
+}
+.userAvPP >img{
+    width: 50px;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+  
+
+.cat{
+    grid-area: 2/2/2/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.cat>h1{
+    font-size: 40px;
+    /* margin-bottom: 40px; */
+}
+
+.Catalogueslid-container{
+    grid-area: 3/2/3/3;
+    place-self: center;
+    /* border:5px solid purple;  */
+    height: 200px;
+    width: 900px;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.cat-carousel{
+    grid-area: 1/2/1/3;
+    width:100%;
+    height: 100%;
+}
+.carousel__item {
+    width: auto; /* Let Slick set the width for each item */
+  }
+.bookcover
+{
+    max-width: 100px;
+    max-height: 100px;
+}
+.book-cover>a{
+    height: 175px;
+    width: 100px;
+}
+
+
+.catalogue-prev{
+    grid-area: 1/1/1/1;
+}
+
+.Catalogueslid{
+    grid-area:1/2/1/3;
+    grid-auto-flow: row;
+    max-width: 100%;
+    height:100%;
+    padding-top: 30px;
+    display: flex;
+}
+.cat-carousel{
+    grid-area: 1/2/1/3;
+    width:700px;
+    height: 100%;
+    /* display: flex; */
+}
+.slick-track {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel__item {
+    width: auto; /* Let Slick set the width for each item */
+  }
+
+body > div > div.Catalogueslid-container > div
+{
+    
+    height: 200px;
+    width: 900px;
+}
+.Catalogueslid .slick-list {
+  overflow: hidden; /* Hide slides outside the viewport */
+}
+
+
+.Catalogueslid .slick-list,
+.Catalogueslid .slick-track {
+    height: 100%;
+    width: 100%;
+    display: flex !important; /* Forces full height & flexbox layout */
+    align-items: stretch; /* Makes items stretch evenly */
+}
+
+.Catalogueslid .slick-slide {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.slick-arrow{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    justify-self: center;
+    align-self: center;
+    opacity: 1 !important;
+}
+
+
+
+.btn.cta-btn.cta-btn--available{
+    color: white;
+}
+
+.userLibrary{
+    display: grid;
+    grid-area: 5/2/5/2;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 20% 60% 20%;
+    margin-top: 20px;
+}
+
+
+.LibraryTitle{
+    grid-area: 1/2/1/3;
+    text-align: center;
+    color: white;
+    order: 1;
+    display:flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.UserBooksPosition{
+    grid-area:2/2/3/2;
+    display:grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.UserBooks{
+    padding-top: 5px;
+    grid-area:1/2/1/3;
+    width:100%;
+    height: 100%;
+    text-align: center;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+
+}
+
+
+.userbooks-prev{
+    grid-area: 1 / 1 / 1 / 1;  /* Places the button in the first cell of the grid */
+}
+
+.inUserbooks{
+    color: #f9f9f9;
+    text-align: center;
+    width:100%;
+    height: 100%;
+    grid-area:1/2/1/3;;
+}
+
+.userbooks-next{
+    grid-area: 1 / 3 / 1 / 4; 
+}
+
+
+.Userbooks-carousel > .slick-list > .slick-track > .book >.book-cover img
+{
+    height: 80px;
+    width: 80px;
+}
+/* Add this at the bottom of your CSS */
+.Userbooks-carousel .book {
+    /* border:5px solid pink; */
+    /* margin-right: 10px; Add 10px gap between books */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Makes sure padding/margin don't break the sizing */
+    color: white;
+}
+
+
+
+
+.item{
+    background-color: brown;
+}
+
+.brown{
+    grid-area: 1/1/1/4;
+}
+
+
+/* .brown1{
+    grid-area: 3/1/3/4;
+} */
+
+.brown2{
+    grid-area: 3/1/3/4;
+}
+
+.brown3{
+    grid-area:1/1/6/1;
+}
+
+.brown4{
+    grid-area:1/3/6/3;
+}
+
+

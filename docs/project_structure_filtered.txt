@@ -1,0 +1,41 @@
+--- Folder Structure ---
+[.parcel-cache]
+    ├── 0d17f115403bdd1d-RequestGraph
+    ├── 104e0e03f18a0175-AssetGraph
+    ├── 2020b07dd12a1862-RequestGraph
+    ├── 6ef86d95d10e9cf9-RequestGraph
+    ├── d0a1a9803bef9ced-AssetGraph
+    ├── data.mdb
+    ├── ee1249bf38ffb48e-AssetGraph
+    ├── lock.mdb
+    ├── snapshot-0d17f115403bdd1d.txt
+    ├── snapshot-2020b07dd12a1862.txt
+    └── snapshot-6ef86d95d10e9cf9.txt
+[docs]
+    ├── .project_structure_filter
+    ├── .project_structure_ignore
+    └── project_structure.txt
+index.js
+package-lock.json
+package.json
+[public]
+    ├── [images]
+        ├── anubis.png
+        ├── horus.png
+        ├── sideway anubis.png
+        ├── sobek.png
+        └── thoth.png
+    ├── [scripts]
+        ├── carousel.js
+        ├── package-lock.json
+        └── package.json
+    └── [styles]
+        ├── index.css
+        └── new.css
+[views]
+    ├── index.ejs
+    ├── new.ejs
+    └── [partials]
+        └── slide.ejs
+
+--- File Contents ---

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/new.css">
+  <title>User Settings</title>
+</head>
+
+<body>
+  <div class="userInput">
+    <div class="userForm">
+      <h1>User Settings</h1>
+      <div class="verifiedPicContainer">
+        <img class="verifiedPic" src="<%= user.profilePic %>" alt="User Picture" />
+        <div class="verifiedUsername">
+          <%= user.userName %>
+        </div>
+      </div>
+      <div class="userOptions">
+        <form id="settingsForm" action="/usersettings/<%=option%>" method="post">
+          <% if (option === "UserName") { %>
+            <label for="newusername">New Username</label><br/>
+            <input type="text" id="newusername" name="newusername" required><br/>          
+          <% } else if (option === "Password") { %>
+            <label for="oldpassword">Old Password</label><br/>
+            <input type="password" class="password-field" id="oldpassword" name="oldpassword" required><br/>
+            <label for="newpassword">New Password</label><br/>
+            <input type="password" class="password-field" id="newpassword" name="newpassword" required><br/>
+            <label for="reenterpassword">Re-enter Password</label><br/>
+            <input type="password" class="password-field" id="reenterpassword" name="reenterpassword" required><br/>
+            <% if (locals.error) { %>
+              <div class="error"><%= error %></div>
+            <% } %>
+            <div class="showPass">
+              <label for="togglePassword">Show Password</label>
+              <input type="checkbox" id="togglePassword" class="togglePassword" >
+            </div>
+          <% } else if (option==="Delete") { %>
+            <div class="delUser">
+              <div class="delAccount">
+                <label for="delAccount">Delete Account</label>
+                <input type="checkbox" id="delAccount" name="delAccount" value="yes" required>
+              </div>
+              <div class="sure">
+                <label for="sure" >I am sure I want to delete my account</label>
+                <input type="checkbox" id="sure" name="sure" value="yes"required>
+              </div>
+          </div>
+               
+          <% } else { %>
+            <div class="userIcon">
+              <label class="avatar_btn">
+                <input type="radio" name="newUserPic" value="images/anubis.png" required hidden>
+                <img src="images/anubis.png" class="anubis icon">
+              </label>
+              <label class="avatar_btn">
+                <input type="radio" name="newUserPic" value="images/horus.png" required hidden>
+                <img src="images/horus.png" class="horus icon">
+              </label>
+              <label class="avatar_btn">
+                <input type="radio" name="newUserPic" value="images/sidewayanubis.png" required hidden>
+                <img src="images/sidewayanubis.png" class="sideAnubis icon">
+              </label>
+              <label class="avatar_btn">
+                <input type="radio" name="newUserPic" value="images/sobek.png" required hidden>
+                <img src="images/sobek.png" class="sobek icon">
+              </label>
+              <label class="avatar_btn">
+                <input type="radio" name="newUserPic" value="images/thoth.png" required hidden>
+                <img src="images/thoth.png" class="thoth icon">
+              </label>
+            </div>
+          <% } %>
+        </form>
+        <form id="backForm"action="/back" method="post"></form>
+      <div class="formButtons">
+        <button type="submit" form="backForm" name="back" value="userOptions">Back</button>
+        <button type="submit" form="settingsForm">Submit</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="/scripts/usersettings_script.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/new.css">
+  <title>Add User</title>
+</head>
+
+<!-- C:\Users\Juan Trujillo\Desktop\web dev projects\s34 capstone project\public\images\sideway anubis.png -->
+<body>
+  <div class="userInput">
+    <div class="userForm">
+      <h1>User Login</h1>
+      <form action="/verifyuser" method="post">
+        <div class="userName">
+            <label for="username">Enter Username</label><br/>
+            <input type="text" id="username" name="username" required><br/>
+            <label for="password">Enter Password</label><br/>
+            <input type="password"class="password-field" id="password" name="password" required><br/>
+            <% if (locals.error) { %>
+                <%= error %><br/>
+            <% } %>
+            <div class="showPass">
+              <label for="togglePassword">Show Password</label>
+              <input type="checkbox" id="togglePassword" class="togglePassword" data-target="password">
+            </div>
+            <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="/scripts/usersettings_script.js"></script>
+  
+</body>
+</html>
