@@ -36,4 +36,4 @@ Thumbs.db
 *.swp
 
 #docs
-/docs/
+/docs/public/scripts/node_modules/
